@@ -2,10 +2,9 @@
   "name": "bashan-stock-manager",
   "version": "1.0.0",
   "description": "POS and Inventory Management for Bashan Animal Feeds",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -13,10 +12,6 @@
     "dotenv": "^16.3.1",
     "@supabase/supabase-js": "^2.38.0",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "nodemailer": "^6.9.7"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+    "jsonwebtoken": "^9.0.2"
   }
 }
