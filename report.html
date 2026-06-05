@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Report - Bashan Animal Feeds</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>📋 Daily Report</h1>
+        <div>
+            <a href="pos.html" class="btn btn-secondary">🔙 Back to POS</a>
+            <a href="dashboard.html" class="btn btn-secondary" id="dashboardLink" style="display:none;">📊 Dashboard</a>
+        </div>
+    </header>
+    
+    <div class="report-container">
+        <div class="date-navigation">
+            <button class="btn btn-secondary" onclick="navigateDate(-1)">◀ Previous</button>
+            <input type="date" id="reportDate" class="form-control" onchange="loadReport()">
+            <button class="btn btn-secondary" onclick="navigateDate(1)">Next ▶</button>
+        </div>
+        
+        <div id="reportContent">
+            <!-- Report will be loaded here -->
+        </div>
+        
+        <div class="report-actions">
+            <button class="btn btn-primary" onclick="downloadReportPDF()">📥 Download PDF</button>
+            <button class="btn btn-success" onclick="downloadReportExcel()">📊 Download Excel</button>
+            <button class="btn btn-secondary" onclick="window.print()">🖨️ Print</button>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

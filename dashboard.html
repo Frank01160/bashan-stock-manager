@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bashan Animal Feeds</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🏪 <span id="shopName">Bashan Animal Feeds</span></h1>
+        <div>
+            <a href="/settings" class="btn btn-secondary">⚙️ Settings</a>
+            <button onclick="logout()" class="btn btn-danger">Logout</button>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <nav class="side-nav">
+            <a href="/dashboard" class="active">📊 Dashboard</a>
+            <a href="/products">📦 Products</a>
+            <a href="/sales">💰 Sales History</a>
+            <a href="/report">📋 Reports</a>
+            <a href="/stock">📈 Stock Management</a>
+            <a href="/stock-history">📊 Stock History</a>
+            <a href="/pos" target="_blank">🛒 Open POS</a>
+        </nav>
+        
+        <main class="main-content">
+            <h2>Dashboard Overview</h2>
+            <p id="currentDate"></p>
+            
+            <div class="grid grid-4" id="summaryCards">
+                <div class="card stat-card">
+                    <h3>💰 Revenue</h3>
+                    <p id="revenue">KES 0.00</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>🏷️ Sales</h3>
+                    <p id="salesCount">0</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>💵 Cash</h3>
+                    <p id="cashAmount">KES 0.00</p>
+                </div>
+                <div class="card stat-card">
+                    <h3>📱 M-Pesa</h3>
+                    <p id="mpesaAmount">KES 0.00</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>⚠️ Low Stock Alerts</h3>
+                <div id="lowStockAlerts">
+                    <p>No low stock alerts</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>📋 Recent Sales</h3>
+                <div class="table-responsive">
+                    <table class="table" id="recentSales">
+                        <thead>
+                            <tr>
+                                <th>Receipt #</th>
+                                <th>Time</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Payment</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
